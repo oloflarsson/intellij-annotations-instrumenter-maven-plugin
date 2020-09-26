@@ -21,6 +21,7 @@ class TestCompilerOptionsTest {
         assertTrue(TestCompilerOptions.from(PATH, "1.9").targetHasParametersSupport());
         assertTrue(TestCompilerOptions.from(PATH, "10").targetHasParametersSupport());
         assertTrue(TestCompilerOptions.from(PATH, "11").targetHasParametersSupport());
+        assertTrue(TestCompilerOptions.from(PATH, "13").targetHasParametersSupport());
     }
 
     @Test
