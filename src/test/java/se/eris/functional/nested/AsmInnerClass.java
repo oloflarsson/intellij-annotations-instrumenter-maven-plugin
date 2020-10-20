@@ -1,7 +1,9 @@
 package se.eris.functional.nested;
 
+import java.util.Objects;
+
 class AsmInnerClass {
-    String name;
+    final String name;
     private final String outerName;
     private final String innerName;
     private final int access;
@@ -31,9 +33,9 @@ class AsmInnerClass {
         final AsmInnerClass that = (AsmInnerClass) o;
 
         if (access != that.access) return false;
-        if (name != null ? !name.equals(that.name) : that.name != null) return false;
-        if (outerName != null ? !outerName.equals(that.outerName) : that.outerName != null) return false;
-        return innerName != null ? innerName.equals(that.innerName) : that.innerName == null;
+        if (!Objects.equals(name, that.name)) return false;
+        if (!Objects.equals(outerName, that.outerName)) return false;
+        return Objects.equals(innerName, that.innerName);
     }
 
     @Override
