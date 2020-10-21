@@ -91,6 +91,7 @@ public abstract class ThrowOnNullMethodVisitor extends MethodVisitor {
      * <p>
      * {@inheritDoc}
      */
+    @Override
     public void visitInsn(final int opcode) {
         if (shouldInclude() && opcode == Opcodes.ARETURN) {
             if (isReturnNotNull) {
@@ -154,7 +155,7 @@ public abstract class ThrowOnNullMethodVisitor extends MethodVisitor {
     }
 
     private boolean isConstructor() {
-        return "<init>".equals(this.methodName);
+        return CONSTRUCTOR_NAME.equals(this.methodName);
     }
 
     private boolean isSynthetic() {
