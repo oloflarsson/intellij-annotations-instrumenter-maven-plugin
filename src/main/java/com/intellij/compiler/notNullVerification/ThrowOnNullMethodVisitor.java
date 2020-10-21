@@ -167,13 +167,13 @@ public abstract class ThrowOnNullMethodVisitor extends MethodVisitor {
         if (warnInsteadOfThrow) {
             generateNullReactionLog(description);
         } else {
-            generateNullReactionThrow(exceptionClass, description, end);
+            generateNullReactionThrow(exceptionClass, description);
         }
         mv.visitLabel(end);
         setInstrumented();
     }
 
-    private void generateNullReactionThrow(@NotNull final String exceptionClass, @NotNull final String description, @NotNull final Label end) {
+    private void generateNullReactionThrow(@NotNull final String exceptionClass, @NotNull final String description) {
         final String exceptionParamClass = "(" + LangUtils.convertToJavaClassName(String.class.getName()) + ")V";
         mv.visitTypeInsn(Opcodes.NEW, exceptionClass);
         mv.visitInsn(Opcodes.DUP);
