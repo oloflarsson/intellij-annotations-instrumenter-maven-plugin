@@ -83,11 +83,4 @@ class ImplicitClassAnnotationInstrumenterTest {
         final Method anonymousClassNotNull = c.getMethod("anonymousClassNotNull");
         ReflectionUtil.simulateMethodCall(anonymousClassNotNull);
     }
-
-    @TestSupportedJavaVersions
-    void equals_shouldAcceptNull(final String javaVersion) throws Exception {
-        final Class<?> c = compilers.get(javaVersion).getCompiledClass(testClass.getName());
-        Object object = c.newInstance();
-        object.equals(null);
-    }
 }

@@ -5,8 +5,6 @@ import se.eris.notnull.ImplicitNotNull;
 
 @ImplicitNotNull
 public class TestImplicitClassAnnotation {
-    public TestImplicitClassAnnotation() {
-    }
 
     public TestImplicitClassAnnotation(String s) {
     }
@@ -35,14 +33,4 @@ public class TestImplicitClassAnnotation {
 
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        return true;
-    }
 }
